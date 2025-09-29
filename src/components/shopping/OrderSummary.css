@@ -1,0 +1,192 @@
+/* Import color variables */
+:root {
+  --black: #000000;
+  --off-black: #333333;
+  --dark-gray: #555555;
+  --mid-gray: #888888;
+  --light-gray: #cccccc;
+  --off-white: #f8f8f8;
+  --white: #ffffff;
+}
+
+/* Order Summary Container */
+.order-summary {
+  background-color: white;
+  border-radius: var(--radius-md, 12px);
+  box-shadow: var(--shadow-sm, 0 2px 8px rgba(0, 0, 0, 0.08));
+  padding: 24px;
+  width: 400px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Summary Title */
+.summary-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary, #333);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color, #eee);
+}
+
+/* Summary Items List */
+.summary-items {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 300px;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Scrollbar Styles */
+.summary-items::-webkit-scrollbar {
+  width: 6px;
+}
+
+.summary-items::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.summary-items::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+/* Summary Item Row */
+.summary-item-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color, #f5f5f5);
+}
+
+.summary-item-row:last-child {
+  border-bottom: none;
+}
+
+/* Item Info */
+.item-info {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.item-quantity {
+  font-weight: 500;
+  color: var(--text-secondary, #666);
+  white-space: nowrap;
+}
+
+.item-name {
+  flex: 1;
+  color: var(--text-primary, #333);
+  font-weight: 500;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-variant {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #666);
+  margin-top: 4px;
+}
+
+.item-price {
+  font-weight: 600;
+  color: var(--text-primary, #333);
+  white-space: nowrap;
+}
+
+/* Summary Totals */
+.summary-totals {
+  border-top: 2px solid var(--border-color, #eee);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-secondary, #666);
+}
+
+.summary-row span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-row.total {
+  margin-top: 4px;
+  padding-top: 16px;
+  border-top: 2px solid var(--border-color, #eee);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary, #333);
+}
+
+.summary-row.discount {
+  color: var(--success-color, #2e7d32);
+}
+
+.summary-icon {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #999);
+}
+
+/* Summary Note */
+.summary-note {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color, #eee);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary, #666);
+  font-size: 0.875rem;
+}
+
+.summary-note svg {
+  color: var(--text-secondary, #666);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .order-summary {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-summary {
+    margin-top: 24px;
+  }
+  
+  .summary-items {
+    max-height: none;
+  }
+  
+  .item-info {
+    flex-wrap: wrap;
+  }
+  
+  .item-price {
+    margin-top: 8px;
+  }
+}
+
+/* Dark mode not needed as we already have a colorful theme */ 

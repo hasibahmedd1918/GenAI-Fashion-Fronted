@@ -1,0 +1,405 @@
+/* Message.css - Individual message styles */
+
+.message {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+  animation: messageSlideIn 0.3s ease-out;
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Message Avatar */
+.message-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* User Message */
+.user-message {
+  flex-direction: row-reverse;
+}
+
+.user-message .message-avatar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.user-message .message-content {
+  align-items: flex-end;
+}
+
+.user-message .message-bubble {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+/* AI Message */
+.ai-message .message-avatar {
+  background: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+.ai-message .message-content {
+  align-items: flex-start;
+}
+
+.ai-message .message-bubble {
+  background: white;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+  border-bottom-left-radius: 4px;
+}
+
+/* Message Content */
+.message-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+  gap: 4px;
+}
+
+/* Message Bubble */
+.message-bubble {
+  padding: 12px 16px;
+  border-radius: 18px;
+  position: relative;
+  word-wrap: break-word;
+  line-height: 1.4;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.message-text {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Formatted message content */
+.message-paragraph {
+  margin-bottom: 8px;
+}
+
+.message-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.message-heading {
+  font-weight: 600;
+  font-size: 15px;
+  color: inherit;
+  margin-bottom: 6px;
+  margin-top: 4px;
+}
+
+.message-heading:first-child {
+  margin-top: 0;
+}
+
+.message-list-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 4px;
+  gap: 8px;
+}
+
+.message-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.list-bullet {
+  color: #667eea;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.list-number {
+  color: #667eea;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+  min-width: 20px;
+}
+
+.message-list-item.numbered {
+  margin-left: 4px;
+}
+
+/* Product list formatting */
+.message-product-list {
+  margin: 8px 0;
+}
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  margin: 4px 0;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid #667eea;
+}
+
+.product-name {
+  font-weight: 500;
+  color: inherit;
+}
+
+.product-price {
+  font-weight: 600;
+  color: #667eea;
+  font-size: 13px;
+}
+
+/* List container */
+.message-list-container {
+  margin: 8px 0;
+}
+
+.message-list-header {
+  font-weight: 600;
+  font-size: 15px;
+  color: inherit;
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+
+.message-list-header:first-child {
+  margin-top: 0;
+}
+
+.message-list-text {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+/* Enhanced text formatting */
+.message-paragraph strong,
+.message-list-item strong {
+  font-weight: 600;
+  color: inherit;
+}
+
+.message-paragraph em,
+.message-list-item em {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Link styling */
+.message-paragraph a,
+.message-list-item a,
+.message-heading a {
+  color: #667eea;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.message-paragraph a:hover,
+.message-list-item a:hover,
+.message-heading a:hover {
+  color: #5a67d8;
+  text-decoration: none;
+}
+
+/* Message Time */
+.message-time {
+  font-size: 11px;
+  color: #94a3b8;
+  padding: 0 4px;
+  margin-top: 2px;
+}
+
+/* Data usage indicator */
+.data-usage-indicator {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ai-message .data-usage-indicator {
+  border-top-color: rgba(0, 0, 0, 0.05);
+}
+
+.data-usage-indicator small {
+  color: #64748b;
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.user-message .data-usage-indicator small {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Hover effects */
+.message-bubble:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+/* Link styling within messages */
+.message-bubble a {
+  color: inherit;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.message-bubble a:hover {
+  opacity: 1;
+}
+
+/* Code blocks in messages */
+.message-bubble code {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 12px;
+}
+
+.user-message .message-bubble code {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .message-content {
+    max-width: 85%;
+  }
+  
+  .message-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+  
+  .message-bubble {
+    padding: 10px 14px;
+    border-radius: 16px;
+  }
+  
+  .message-text {
+    font-size: 13px;
+  }
+  
+  .message-time {
+    font-size: 10px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .ai-message .message-avatar {
+    background: #334155;
+    color: #cbd5e1;
+    border-color: #475569;
+  }
+  
+  .ai-message .message-bubble {
+    background: #1e293b;
+    color: #f1f5f9;
+    border-color: #334155;
+  }
+  
+  .message-time {
+    color: #64748b;
+  }
+  
+  .message-bubble code {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .ai-message .message-bubble code {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  .list-bullet,
+  .list-number {
+    color: #8b5cf6;
+  }
+  
+  .message-heading {
+    color: #f1f5f9;
+  }
+  
+  .product-item {
+    background: rgba(139, 92, 246, 0.1);
+    border-left-color: #8b5cf6;
+  }
+  
+  .product-price {
+    color: #8b5cf6;
+  }
+  
+  .message-paragraph a,
+  .message-list-item a,
+  .message-heading a {
+    color: #8b5cf6;
+  }
+  
+  .message-paragraph a:hover,
+  .message-list-item a:hover,
+  .message-heading a:hover {
+    color: #a78bfa;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .message-bubble {
+    border-width: 2px;
+  }
+  
+  .ai-message .message-bubble {
+    border-color: currentColor;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .message {
+    animation: none;
+  }
+  
+  .message-bubble:hover {
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .message {
+    break-inside: avoid;
+  }
+  
+  .message-avatar {
+    display: none;
+  }
+  
+  .message-bubble {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
